@@ -2,12 +2,11 @@ pipeline {
     agent { label 'nodejs' }
     stages{
         stage('Test'){
-            steps {
-                dir('greeting-cd-pipeline') {
-                    sh "node test.js"
-                }
-            } 
+            steps { 
+                sh "node test.js"
+            }
         }
+        
         stage('Deploy') {
             steps {
                 sh '''
